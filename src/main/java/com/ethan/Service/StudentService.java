@@ -5,6 +5,7 @@ import com.ethan.Dao.StudentDao;
 import com.ethan.Entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Collection;
 
@@ -17,4 +18,9 @@ public class StudentService {
     public Collection<Student> getAllStudents(){
         return studentDao.getAllStudents();
     }
+
+    public Student getStudentById(int id){
+        return this.studentDao.getStudentById(id);
+    }
+
 }
