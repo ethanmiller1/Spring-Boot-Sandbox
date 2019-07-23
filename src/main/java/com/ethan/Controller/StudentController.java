@@ -4,10 +4,7 @@ package com.ethan.Controller;
 import com.ethan.Entity.Student;
 import com.ethan.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -32,6 +29,11 @@ public class StudentController {
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteStudentById(@PathVariable("id") int id){
         studentService.removeStudentById(id);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    public void deleteStudentById(@RequestBody Student student){
+        studentService.updateStudent(student);
     }
 
 }
