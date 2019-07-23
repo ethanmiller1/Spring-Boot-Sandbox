@@ -24,8 +24,14 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    // Return the document who's _id matches the url id requested; @PathVariable("id") = req.params.uid in node.js.
     public Student getStudentById(@PathVariable("id") int id){
         return studentService.getStudentById(id);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void deleteStudentById(@PathVariable("id") int id){
+        studentService.removeStudentById(id);
     }
 
 }
