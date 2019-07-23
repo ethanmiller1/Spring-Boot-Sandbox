@@ -43,4 +43,7 @@ public class StudentDao {
         students.put(student.getId(), student);
     }
 
+    public void insertStudentToDb(Student student) {
+        this.students.put(student.getId(), student);
+    }
 }
